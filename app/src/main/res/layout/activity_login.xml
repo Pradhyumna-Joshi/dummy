@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@color/white"
+    tools:context=".login"
+    android:orientation="vertical">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:src="@drawable/icon"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:layout_marginRight="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="-50dp"
+        android:gravity="center">
+
+        <TextView
+
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text=" . "
+            android:gravity="center"
+            android:textSize="50dp"
+            android:textColor="#21E1F3"
+            android:textStyle="bold"
+            android:fontFamily="serif"
+            />
+
+        <TextView
+
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text=" . "
+            android:gravity="center"
+            android:textSize="50dp"
+            android:textColor="#21E1F3"
+            android:textStyle="bold"
+            android:fontFamily="serif"
+            />
+        <TextView
+
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text=" . "
+            android:gravity="center"
+            android:textSize="50dp"
+            android:textColor="#21E1F3"
+            android:textStyle="bold"
+            android:fontFamily="serif"
+            />
+        <TextView
+
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text=" . "
+            android:gravity="center"
+            android:textSize="50dp"
+            android:textColor="#21E1F3"
+            android:textStyle="bold"
+            android:fontFamily="serif"
+            />
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:isScrollContainer="true"
+        app:cardCornerRadius="12dp"
+        android:background="@color/white"
+        android:padding="20dp"
+        android:elevation="10dp"
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:background="@color/white"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login to your Account"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/black"></TextView>
+        <View
+            android:layout_marginTop="7dp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginLeft="47dp"
+            android:layout_marginRight="47dp"
+            android:background="@color/black"></View>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_email"
+            android:layout_marginTop="22dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxStrokeColor="@color/purple_500"
+            android:textColorHint="@color/purple_700"
+            android:background="@android:color/white">
+
+            <EditText
+                android:id="@+id/etEmailId"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:inputType="textEmailAddress"
+                android:hint="User Name" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_pass"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            app:boxStrokeColor="@color/purple_500"
+            android:textColorHint="@color/purple_700"
+            android:background="@android:color/white"
+            android:layout_marginTop="18dp"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/etPass"
+                android:layout_width="match_parent"
+
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:textSize="16sp"
+                android:hint="Password" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign in"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:padding="7dp"
+            android:gravity="center"
+            android:layout_marginTop="21dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:background="@drawable/shape_button_rounded"></TextView>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="32dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_viaPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login via OTP"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="#000000"/>
+        <TextView
+            android:id="@+id/tv_noAccount"
+            android:layout_marginTop="11dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Don't have an account?"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="#E91E63"/>
+    </LinearLayout>
+
+
+</LinearLayout>

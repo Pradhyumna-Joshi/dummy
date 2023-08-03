@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "365941950221",
+    "project_id": "nppr-ae27a",
+    "storage_bucket": "nppr-ae27a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:365941950221:android:54f472856b390c00169244",
+        "android_client_info": {
+          "package_name": "com.nppr.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "365941950221-uehpd9m4dkfjgmorpt49ie574m76vk5v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nppr.myapplication",
+            "certificate_hash": "4551708bd535c8a4ec3611210880bcb27be59823"
+          }
+        },
+        {
+          "client_id": "365941950221-djevafin599cajiqneg808106gbgvk51.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuBNfgEfi8lydm-_UXI5tbAGAwdtpd_VE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "365941950221-djevafin599cajiqneg808106gbgvk51.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
