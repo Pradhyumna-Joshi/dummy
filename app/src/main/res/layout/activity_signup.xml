@@ -24,7 +24,7 @@
         android:orientation="horizontal"
         android:layout_marginRight="100dp"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="-50dp"
+        android:layout_marginTop="-10dp"
         android:gravity="center">
 
         <TextView
@@ -164,7 +164,7 @@
                 android:textSize="14sp"
                 android:textColor="@color/black"
                 android:inputType="textEmailAddress"
-                android:hint="User Name" />
+                android:hint="Email ID" />
 
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout

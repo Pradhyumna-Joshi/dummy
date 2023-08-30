@@ -51,10 +51,11 @@ class signup : AppCompatActivity() {
                         var userMap = hashMapOf(
                             "name" to etName.text.toString(),
                             "email" to etEmailId.text.toString(),
-                            "phone" to etMobNo.text.toString()
+                            "phone" to etMobNo.text.toString(),
+                            "age" to ""
                         )
                         val db=FirebaseFirestore.getInstance()
-                        db.collection("Users").whereEqualTo("phone",etMobNo.text.toString()).get().addOnSuccessListener {
+                        db.collection("Users").whereEqualTo("email",etEmailId.text.toString()).get().addOnSuccessListener {
 
                             //for(doc in it){
                                 if(it.size()==0){
@@ -88,9 +89,7 @@ class signup : AppCompatActivity() {
                                 }
                                 else{
                                     hideProgressDialog()
-                                    Toast.makeText(this,"Phone number is already registered!",Toast.LENGTH_LONG).show()
-
-
+                                    Toast.makeText(this,"Email is already registered!",Toast.LENGTH_LONG).show()
                                 }
                             //}
                         }

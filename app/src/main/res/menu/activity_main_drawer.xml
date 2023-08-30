@@ -21,6 +21,10 @@
         android:icon="@drawable/ic_future"
         android:title="Future Levels" />
         <item
+            android:id="@+id/nav_proff"
+            android:icon="@drawable/profile"
+            android:title="Profile" />
+        <item
         android:id="@+id/nav_signOut"
         android:icon="@drawable/ic_out"
         android:title="Sign Out" />

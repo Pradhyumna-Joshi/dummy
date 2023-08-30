@@ -9,6 +9,13 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
+    <string-array name="slots">
+        <item>---Pick Location Provider---</item>
+        <item>Use Current Location</item>
+        <item>Use City Name</item>
+        <item>Use Pincode</item>
+
+    </string-array>
     <string name="menu_home">Home</string>
     <string name="menu_navi">Navigation</string>
     <string name="menu_realtime">Realtime Pollutant Levels</string>

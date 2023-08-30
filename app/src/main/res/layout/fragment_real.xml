@@ -42,11 +42,20 @@
             android:layout_marginLeft="18dp"
             android:layout_marginRight="18dp"
             android:src="@drawable/icon"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Choose Location Provider"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="18dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp">
 
@@ -58,7 +67,7 @@
                 android:textColor="#ffffff"
                 android:backgroundTint="#09A4F8"
                 android:layout_marginRight="3dp"
-                android:text="live LOCATION"/>
+                android:text="LOCATION"/>
             <Button
                 android:id="@+id/btn_ct"
                 android:layout_width="0dp"
@@ -68,7 +77,17 @@
                 android:textColor="#ffffff"
                 android:layout_marginLeft="3dp"
                 android:layout_marginRight="3dp"
-                android:text="Enter city name"/>
+                android:text="city name"/>
+            <Button
+                android:id="@+id/btn_cop"
+                android:layout_width="0dp"
+                android:backgroundTint="#09A4F8"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="3dp"
+                android:textColor="#ffffff"
+                android:layout_marginRight="3dp"
+                android:text="PINCODE"/>
 
         </LinearLayout>
         <LinearLayout
@@ -80,17 +99,8 @@
             android:layout_marginRight="10dp">
 
             <Button
-                android:id="@+id/btn_cop"
-                android:layout_width="0dp"
-                android:backgroundTint="#09A4F8"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginLeft="3dp"
-                android:textColor="#ffffff"
-                android:layout_marginRight="3dp"
-                android:text="Enter PINCODE"/>
-            <Button
                 android:id="@+id/btn_pom"
+                android:visibility="gone"
                 android:backgroundTint="#09A4F8"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -100,6 +110,96 @@
                 android:text="Pick on map"/>
 
         </LinearLayout>
+
+        <Spinner
+            android:visibility="gone"
+            android:id="@+id/mw_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:id="@+id/ll_country"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="18dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/et_cnt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Country"/>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:inputType="number"
+                    android:maxLength="6"
+                    android:id="@+id/et_pin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Pincode"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/ll_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:layout_margin="18dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/et_ct"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter City"
+                    android:textColor="@color/black"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </LinearLayout>
+
+
+
+        <Button
+            android:id="@+id/ss"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="search"
+            android:layout_margin="20dp"/>
+
+
 
 
         <ScrollView
@@ -132,88 +232,6 @@
                             android:text="ENTER CITY NAME"/>
                     </LinearLayout>
                 -->
-                    <LinearLayout
-                        android:id="@+id/ll_country"
-                        android:layout_width="match_parent"
-                        android:visibility="gone"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_margin="18dp">
-
-                        <com.google.android.material.textfield.TextInputLayout
-
-                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                            android:layout_width="match_parent"
-                            android:layout_marginTop="10dp"
-                            android:visibility="gone"
-                            android:layout_height="wrap_content">
-                            <EditText
-                                android:id="@+id/et_cnt"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="Enter Country"/>
-
-
-                        </com.google.android.material.textfield.TextInputLayout>
-
-                        <com.google.android.material.textfield.TextInputLayout
-
-                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                            android:layout_width="match_parent"
-                            android:layout_marginTop="10dp"
-                            android:layout_height="wrap_content">
-
-                            <EditText
-                                android:inputType="number"
-                                android:maxLength="6"
-                                android:id="@+id/et_pin"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="Enter Pincode"/>
-                        </com.google.android.material.textfield.TextInputLayout>
-
-
-                    </LinearLayout>
-
-
-
-                    <LinearLayout
-                        android:id="@+id/ll_city"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:visibility="gone"
-                        android:layout_margin="18dp">
-
-                        <com.google.android.material.textfield.TextInputLayout
-
-                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                            android:layout_width="match_parent"
-                            android:layout_marginTop="10dp"
-                            android:layout_height="wrap_content">
-
-                            <EditText
-                                android:id="@+id/et_ct"
-                                android:layout_marginTop="10dp"
-                                android:layout_width="match_parent"
-                                android:layout_weight="1"
-                                android:layout_height="wrap_content"
-                                android:hint="Enter City"
-                                android:textColor="@color/black"/>
-                        </com.google.android.material.textfield.TextInputLayout>
-
-
-                    </LinearLayout>
-
-
-
-                    <Button
-                        android:id="@+id/ss"
-                        android:visibility="gone"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="search"
-                        android:layout_margin="20dp"/>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

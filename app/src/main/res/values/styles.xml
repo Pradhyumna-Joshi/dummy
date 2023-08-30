@@ -4,4 +4,7 @@
         <item name="android:background">@color/gray_400</item>
         <item name="exampleColor">@color/light_blue_400</item>
     </style>
+
+    <style name="CircularDeterminateProgressBar">
+        <![CDATA[<style name="CircularDeterminateProgressBar">         <item name="android:indeterminateOnly">false</item>         <item name="android:progressDrawable">@drawable/circle</item>     </style>]]></style>
 </resources>

@@ -29,11 +29,16 @@
         android:label="Future Pollutant Levels"
         tools:layout="@layout/fragment_future" />
 
+    <fragment
+        android:id="@+id/nav_proff"
+        android:name="com.nppr.myapplication.ProfileFragment"
+        android:label="PROFILE"
+        tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/nav_signOut"
         android:name="com.nppr.myapplication.signOutFragment"
-        android:label="Greetings from AirO'Drive!"
+        android:label="AirO'Drive"
         tools:layout="@layout/fragment_sign_out" />
 
 </navigation>

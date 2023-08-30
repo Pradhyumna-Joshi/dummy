@@ -4,14 +4,10 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.constraintlayout.motion.widget.OnSwipe
 import com.google.firebase.auth.FirebaseAuth
 
 class Intro : AppCompatActivity() {
@@ -39,7 +35,7 @@ class Intro : AppCompatActivity() {
 
         var arr=ArrayList<Int>()
         arr.add(R.drawable.navipic)
-        arr.add(R.drawable.img)
+        arr.add(R.drawable.real)
         arr.add(R.drawable.future)
         arr.add(R.drawable.future)
         var cnt=0

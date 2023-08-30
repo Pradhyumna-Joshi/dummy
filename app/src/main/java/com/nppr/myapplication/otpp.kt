@@ -13,6 +13,7 @@ import android.widget.Toast
 import com.google.firebase.FirebaseException
 import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.*
+import com.google.firebase.firestore.FirebaseFirestore
 import java.util.concurrent.TimeUnit
 
 class otpp : AppCompatActivity() {
@@ -28,7 +29,6 @@ class otpp : AppCompatActivity() {
         sotp.setOnClickListener {
             val intent = Intent(this, verifyOTP::class.java)
             startActivity(intent)
-
         }
 
         var callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
@@ -121,6 +121,40 @@ class otpp : AppCompatActivity() {
         var k = input_mobile_number.text.toString()
         val sii = k.length
         if (sii == 10) {
+            var userMap = hashMapOf(
+                "name" to "Guest User",
+                "email" to "",
+                "phone" to input_mobile_number.text.toString(),
+                "age" to ""
+            )
+            val db= FirebaseFirestore.getInstance()
+            db.collection("Users").whereEqualTo("phone",input_mobile_number.text.toString()).get().addOnSuccessListener {
+
+                //for(doc in it){
+                if(it.size()==0){
+
+                    Toast.makeText(this,"New user",Toast.LENGTH_LONG).show()
+                    val dbc = db.collection("Users").document()
+                    dbc.set(userMap).addOnSuccessListener {
+                        //hideProgressDialog()
+
+                       // val intent = Intent(this, verifyOTP::class.java)
+                        //startActivity(intent)
+                        //finish()
+                    }.addOnFailureListener { e ->
+                        //hideProgressDialog()
+
+                        Log.w("signup", "Error adding document", e)
+                    }
+                }
+                else{
+                    Toast.makeText(this,"Old user",Toast.LENGTH_LONG).show()
+                    //val intent = Intent(this, verifyOTP::class.java)
+                    //startActivity(intent)
+
+                }
+                //}
+            }
             return true
         }
         Toast.makeText(this, "Incorrect Mobile number", Toast.LENGTH_LONG).show()

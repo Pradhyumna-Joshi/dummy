@@ -31,7 +31,7 @@
         android:orientation="horizontal"
         android:layout_marginRight="100dp"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="-50dp"
+        android:layout_marginTop="-10dp"
         android:gravity="center">
 
         <TextView

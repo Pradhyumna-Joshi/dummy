@@ -19,6 +19,9 @@ class RealFragment : Fragment(R.layout.fragment_real) {
 
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private val permissionId = 2
+    var harvestingmonth: Spinner? = null
+    var t_harvestingmonth: String? = null
+    private var time:String?=""
 
     override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
         super.onViewCreated(itemView, savedInstanceState)
@@ -37,6 +40,7 @@ class RealFragment : Fragment(R.layout.fragment_real) {
         val etCnt: EditText =itemView.findViewById(R.id.et_cnt)
         val etPin: EditText =itemView.findViewById(R.id.et_pin)
         val ss: Button =itemView.findViewById(R.id.ss)
+
         val REQUEST_LOCATION_PERMISSION=1
         val ress:TextView=itemView.findViewById(R.id.ress)
         val ox:TextView=itemView.findViewById(R.id.o3)
@@ -54,6 +58,90 @@ class RealFragment : Fragment(R.layout.fragment_real) {
         val ll_no2:LinearLayout=itemView.findViewById(R.id.ll_no2)
         val ll_co:LinearLayout=itemView.findViewById(R.id.ll_co)
 
+
+        ll_o3.setOnClickListener {
+            val destinationFragment = Info()
+            val bundle = Bundle()
+            val str = "O3"
+            bundle.putString("key", str)
+            destinationFragment.arguments = bundle
+
+            // Perform the navigation
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.nav_host_fragment_content_home, destinationFragment)
+                .addToBackStack(null) // If you want to add the fragment to the back stack
+                .commit()
+        }
+        ll_pm10.setOnClickListener {
+
+            val destinationFragment = Info()
+            val bundle = Bundle()
+            val str = "PM10"
+            bundle.putString("key", str)
+            destinationFragment.arguments = bundle
+
+            // Perform the navigation
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.nav_host_fragment_content_home, destinationFragment)
+                .addToBackStack(null) // If you want to add the fragment to the back stack
+                .commit()
+        }
+        ll_co.setOnClickListener {
+
+            val destinationFragment = Info()
+            val bundle = Bundle()
+            val str = "CO"
+            bundle.putString("key", str)
+            destinationFragment.arguments = bundle
+
+            // Perform the navigation
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.nav_host_fragment_content_home, destinationFragment)
+                .addToBackStack(null) // If you want to add the fragment to the back stack
+                .commit()
+        }
+        ll_no2.setOnClickListener {
+
+            val destinationFragment = Info()
+            val bundle = Bundle()
+            val str = "NO2"
+            bundle.putString("key", str)
+            destinationFragment.arguments = bundle
+
+            // Perform the navigation
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.nav_host_fragment_content_home, destinationFragment)
+                .addToBackStack(null) // If you want to add the fragment to the back stack
+                .commit()
+        }
+        ll_pm25.setOnClickListener {
+
+            val destinationFragment = Info()
+            val bundle = Bundle()
+            val str = "PM25"
+            bundle.putString("key", str)
+            destinationFragment.arguments = bundle
+
+            // Perform the navigation
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.nav_host_fragment_content_home, destinationFragment)
+                .addToBackStack(null) // If you want to add the fragment to the back stack
+                .commit()
+        }
+        ll_so2.setOnClickListener {
+
+            val destinationFragment = Info()
+            val bundle = Bundle()
+            val str = "SO2"
+            bundle.putString("key", str)
+            destinationFragment.arguments = bundle
+
+            // Perform the navigation
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.nav_host_fragment_content_home, destinationFragment)
+                .addToBackStack(null) // If you want to add the fragment to the back stack
+                .commit()
+        }
         btnCop.setOnClickListener {
             cntry.visibility= View.VISIBLE
             ct.visibility=View.GONE
@@ -75,6 +163,29 @@ class RealFragment : Fragment(R.layout.fragment_real) {
             search.visibility=View.GONE
             val intent= Intent(context,MapsActivity::class.java)
             startActivity(intent)
+        }
+        btnll.setOnClickListener {
+            cntry.visibility= View.GONE
+            ct.visibility=View.GONE
+            search.visibility=View.GONE
+
+        }
+        val slott = resources.getStringArray(R.array.slots)
+        val spinner2 = itemView.findViewById<Spinner>(R.id.mw_spinner)
+        if (spinner2 != null) {
+            val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, slott)
+            spinner2.adapter = adapter
+            spinner2.onItemSelectedListener = object :
+                AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                    time=slott[position]
+
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>) {
+                    // write code to perform some action
+                }
+            }
         }
         /*
         btnll.setOnClickListener {
@@ -102,13 +213,13 @@ class RealFragment : Fragment(R.layout.fragment_real) {
         }*/
         ss.setOnClickListener {
             if(!etPin.text.isNullOrEmpty() && etPin.text.length==6){
-                val url="https://api.weatherbit.io/v2.0/current/airquality?postal_code=${etPin.text.toString()}&country=in&key=dbe8a69ceb3247c69eccae80651e0c8a"
+                val url="https://api.weatherbit.io/v2.0/current/airquality?postal_code=${etPin.text.toString()}&country=in&key=b079ef38f9d549fb9c6b9a25a59b2a13"
                 fetchRes(url,ox,pmx10,pmx25,sox2,cox,nox,city,state,ll_o3,ll_pm10,ll_pm25,ll_co,ll_so2,ll_no2)
                 cntry.visibility=View.GONE
                 ss.visibility=View.GONE
             }
             else if(!etCt.text.isNullOrEmpty()){
-                val url="https://api.weatherbit.io/v2.0/current/airquality?city=${etCt.text.toString()}&key=dbe8a69ceb3247c69eccae80651e0c8a"//?lat=35.7721&lon=-78.63861&key=3d9a986599ee47c8bc87962fb8f03460"
+                val url="https://api.weatherbit.io/v2.0/current/airquality?city=${etCt.text.toString()}&key=b079ef38f9d549fb9c6b9a25a59b2a13"//?lat=35.7721&lon=-78.63861&key=3d9a986599ee47c8bc87962fb8f03460"
                 fetchRes(url,ox,pmx10,pmx25,sox2,cox,nox, city,state,ll_o3,ll_pm10,ll_pm25,ll_co,ll_so2,ll_no2)
                 ct.visibility=View.GONE
                 ss.visibility=View.GONE
@@ -157,7 +268,7 @@ class RealFragment : Fragment(R.layout.fragment_real) {
 
         if(mLongit!=-77777.777770077 && mLatit!=-77777.777770077){
             Toast.makeText(context,"lat=${mLatit}&lon=${mLongit}",Toast.LENGTH_LONG).show()
-            val url="https://api.weatherbit.io/v2.0/current/airquality?lat=${mLatit}&lon=${mLongit}&key=dbe8a69ceb3247c69eccae80651e0c8a"
+            val url="https://api.weatherbit.io/v2.0/current/airquality?lat=${mLatit}&lon=${mLongit}&key=b079ef38f9d549fb9c6b9a25a59b2a13"
             fetchRes(url,ox,pmx10,pmx25,sox2,cox,nox,city,state,ll_o3,ll_pm10,ll_pm25,ll_co,ll_so2,ll_no2)
         }
         return itemView//iew
