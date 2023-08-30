@@ -5,19 +5,19 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/home"
             android:icon="@drawable/ic_home"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_navigate"
+            android:id="@+id/navigate"
             android:icon="@drawable/ic_navi"
             android:title="Navigation" />
         <item
-            android:id="@+id/nav_realLevels"
+            android:id="@+id/realTime"
             android:icon="@drawable/ic_real"
             android:title="Real time Levels" />
         <item
-        android:id="@+id/nav_futureLevels"
+        android:id="@+id/future"
         android:icon="@drawable/ic_future"
         android:title="Future Levels" />
         <item
@@ -25,7 +25,7 @@
             android:icon="@drawable/profile"
             android:title="Profile" />
         <item
-        android:id="@+id/nav_signOut"
+        android:id="@+id/signOut"
         android:icon="@drawable/ic_out"
         android:title="Sign Out" />
     </group>

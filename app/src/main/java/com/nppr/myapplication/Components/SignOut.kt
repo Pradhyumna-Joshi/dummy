@@ -1,4 +1,4 @@
-package com.nppr.myapplication
+package com.nppr.myapplication.Components
 
 import android.app.AlertDialog
 import android.content.Intent
@@ -8,11 +8,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import com.google.firebase.auth.FirebaseAuth
+import com.nppr.myapplication.R
 
 
-class signOutFragment : Fragment(R.layout.fragment_sign_out) {
+class SignOut : Fragment(R.layout.fragment_sign_out) {
 
     override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
         super.onViewCreated(itemView, savedInstanceState)
@@ -25,15 +25,15 @@ class signOutFragment : Fragment(R.layout.fragment_sign_out) {
         builder.setPositiveButton("Yes") { dialogInterface, which ->
             Handler().postDelayed({
                 FirebaseAuth.getInstance().signOut()
-                val intent = Intent(activity, Intro::class.java)
-                startActivity(intent)
+//                val intent = Intent(activity, Intro::class.java)
+//                startActivity(intent)
                 requireActivity().finish()
             },1500)
 
         }
 
         builder.setNegativeButton("No") { dialogInterface, which ->
-            val destinationFragment = HomeFragment()
+            val destinationFragment = Home()
             // Perform the navigation
             parentFragmentManager.beginTransaction()
                 .replace(R.id.nav_host_fragment_content_home, destinationFragment)

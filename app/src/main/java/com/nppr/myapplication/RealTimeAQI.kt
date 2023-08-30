@@ -6,14 +6,12 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Color
 import android.location.Address
 import android.location.Geocoder
 import android.location.Location
 import android.location.LocationManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -22,14 +20,13 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-import okhttp3.internal.http2.Settings
+import com.nppr.myapplication.Components.Home
 import java.util.*
 import kotlin.math.roundToInt
 
@@ -323,7 +320,7 @@ class RealTimeAQI : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        replaceFragmentMenu(HomeFragment())
+        replaceFragmentMenu(Home())
 
     }
     /*

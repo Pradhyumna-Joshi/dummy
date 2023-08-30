@@ -1,6 +1,5 @@
 package com.nppr.myapplication
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -17,11 +16,11 @@ import com.google.maps.DirectionsApi
 import com.google.maps.GeoApiContext
 import com.google.maps.model.DirectionsResult
 import com.google.maps.model.TravelMode
+import com.nppr.myapplication.Components.RealTime
 import com.nppr.myapplication.databinding.ActivityMapsBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import java.util.*
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback ,  GoogleMap.OnMapClickListener {
 
@@ -50,7 +49,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback ,  GoogleMap.OnMapC
 */            val fragmentManager: FragmentManager = supportFragmentManager
             val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
 
-            val fragment = RealFragment()
+            val fragment = RealTime()
             fragmentTransaction.replace(R.id.present, fragment) // Replace with the ID of your container
             fragmentTransaction.commit()
 

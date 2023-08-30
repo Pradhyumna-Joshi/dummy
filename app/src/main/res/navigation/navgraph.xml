@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/login3">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.nppr.myapplication.Components.Home"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_realLevels2"
+            app:destination="@id/realTime" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_signOut2"
+            app:destination="@id/signOut" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_navigate2"
+            app:destination="@id/navigate" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_futureLevels2"
+            app:destination="@id/future" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigate"
+        android:name="com.nppr.myapplication.Components.Navigate"
+        android:label="@string/menu_navi"
+        tools:layout="@layout/fragment_navigate" />
+
+    <fragment
+        android:id="@+id/realTime"
+        android:name="com.nppr.myapplication.Components.RealTime"
+        android:label="@string/menu_realtime"
+        tools:layout="@layout/fragment_real" />
+
+    <fragment
+        android:id="@+id/future"
+        android:name="com.nppr.myapplication.Components.Future"
+        android:label="Future Pollutant Levels"
+        tools:layout="@layout/fragment_future" />
+
+    <fragment
+        android:id="@+id/nav_proff"
+        android:name="com.nppr.myapplication.ProfileFragment"
+        android:label="PROFILE"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/signOut"
+        android:name="com.nppr.myapplication.Components.SignOut"
+        android:label="AirO'Drive"
+        tools:layout="@layout/fragment_sign_out" />
+    <fragment
+        android:id="@+id/login3"
+        android:name="com.nppr.myapplication.Components.Login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login3_to_signUp"
+            app:destination="@id/signUp" />
+        <action
+            android:id="@+id/action_login3_to_home"
+            app:destination="@id/home" />
+        <action
+            android:id="@+id/action_login3_to_otpScreen"
+            app:destination="@id/otpScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUp"
+        android:name="com.nppr.myapplication.Components.SignUp"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUp_to_login3"
+            app:destination="@id/login3" />
+        <action
+            android:id="@+id/action_signUp_to_intro"
+            app:destination="@id/intro" />
+    </fragment>
+    <fragment
+        android:id="@+id/intro"
+        android:name="com.nppr.myapplication.Intro"
+        android:label="fragment_intro"
+        tools:layout="@layout/fragment_intro" >
+        <action
+            android:id="@+id/action_intro_to_login3"
+            app:destination="@id/login3" />
+    </fragment>
+    <fragment
+        android:id="@+id/splash2"
+        android:name="com.nppr.myapplication.Components.Splash"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splash2_to_intro"
+            app:destination="@id/intro" />
+        <action
+            android:id="@+id/action_splash2_to_login3"
+            app:destination="@id/login3" />
+    </fragment>
+    <fragment
+        android:id="@+id/verifyOTP"
+        android:name="com.nppr.myapplication.Components.VerifyOTP"
+        android:label="fragment_verify_o_t_p"
+        tools:layout="@layout/fragment_verify_o_t_p" >
+        <action
+            android:id="@+id/action_verifyOTP_to_home"
+            app:destination="@id/home" />
+    </fragment>
+    <fragment
+        android:id="@+id/otpScreen"
+        android:name="com.nppr.myapplication.OtpScreen"
+        android:label="fragment_otp_screen"
+        tools:layout="@layout/fragment_otp_screen" >
+        <action
+            android:id="@+id/action_otpScreen_to_verifyOTP"
+            app:destination="@id/verifyOTP" />
+    </fragment>
+
+</navigation>

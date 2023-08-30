@@ -1,202 +1,217 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:id="@+id/homee"
-    android:background="@color/white"
-    android:orientation="vertical"
-    android:layout_height="match_parent"
-    tools:context=".HomeFragment">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:id="@+id/ll_icon"
-        android:visibility="gone"
+    android:layout_height="match_parent">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:id="@+id/homee"
+        android:layout_height="match_parent"
+        tools:context=".Components.Home"
+        android:background="#52E4E4E4"
         >
 
-        <ImageView
-            android:id="@+id/iv_iconn"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/layout"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/home_greeting"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="30dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvDuration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Good Morning"
+                            android:fontFamily="@font/bold"
+                            android:textColor="@color/white"
+                            android:textSize="28sp"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@color/white"
+                            app:shapeAppearanceOverlay="@style/RoundedSquare" />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ABC"
+                        android:fontFamily="@font/medium"
+                        android:textColor="@color/white"
+                        android:textSize="24sp" />
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="-40dp"
+                android:background="@drawable/bg_search"
+                android:elevation="5dp"
+                app:layout_constraintBottom_toTopOf="@+id/circularProgressBar"
+                app:queryHint="Search" />
+
+
+        </LinearLayout>
+
+        <com.mikhaellopez.circularprogressbar.CircularProgressBar
+            android:id="@+id/circularProgressBar"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
             android:layout_gravity="center"
-            android:layout_height="180dp"
-            android:src="@drawable/icon"/>
-    </LinearLayout>
+            app:cpb_background_progressbar_color="#3E673AB7"
+            app:cpb_background_progressbar_width="25dp"
+            app:cpb_progress_direction="to_right"
+            app:cpb_progressbar_color="@color/purple_500"
+            app:cpb_progressbar_width="23dp"
+            app:cpb_round_border="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tVaqi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text=""
+            android:fontFamily="@font/bold"
+            android:textColor="@color/black"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/circularProgressBar">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:fontFamily="@font/bold"
+                android:text="Good air quality | "
+                android:textAlignment="viewEnd"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/circularProgressBar" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="😀"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/circularProgressBar" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:layout_marginTop="?actionBarSize"
-            android:id="@+id/contentt"
-            android:orientation="vertical">
-            <SearchView
-                android:id="@+id/idSV"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:iconifiedByDefault="false"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
-                android:padding="4dp"
-                android:background="@drawable/boxx2"
-                android:queryHint="Bengaluru" />
-            <!--
-            <com.farimarwat.supergaugeview.SuperGaugeView
-                android:id="@+id/mygaugeview"
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:gaugeText="Upload Speed"
-                app:duration="500"
-                app:progressBackground="gauge_keyhole_14"
-                app:gaugeTextColor="@color/white"
+                android:src="@drawable/ic_navi" />
+
+            <TextView
+                android:id="@+id/tvCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="16sp"
+                android:layout_marginHorizontal="2dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:fontFamily="@font/regular"
                 />
 
--->
-
-        </LinearLayout>
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="140dp"
-        android:layout_gravity="center"
-        android:src="@drawable/icon"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical">
-    <TextView
-        android:id="@+id/tv_dura"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Good Evening! "
-        android:textColor="#FF0057"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:textSize="18dp"/>
-    <TextView
-        android:id="@+id/tv_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="..."
-        android:textColor="#0000FF"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:textSize="18dp"/>
-    </LinearLayout>
-
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardElevation="11dp"
-        android:layout_margin="11dp"
-        app:cardCornerRadius="11dp">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="275dp"
-        android:padding="18dp"
-        android:orientation="vertical">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="16dp"
-            android:text="Location:"
-            android:textColor="#000000"
-            android:textStyle="bold"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="18dp"
-            android:fontFamily="sans-serif"
-            android:textColor="#0000ff"
-            android:textSize="16sp"
-            android:text="Bengaluru"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
             <TextView
+                android:id="@+id/tvState"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16dp"
-                android:text="Quality  :"
-                android:textColor="#000000"
-                android:textStyle="bold"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="18dp"
-                android:fontFamily="sans-serif"
-                android:textColor="#00B100"
+                android:text=""
                 android:textSize="16sp"
-                android:text=" Good"/>
+                android:layout_marginHorizontal="2dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:fontFamily="@font/regular"
+                />
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/aqi"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="18dp"
-            android:fontFamily="sans-serif"
-            android:textColor="#00B100"
-            android:textSize="16sp"
-            android:text=" Good"/>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        <ProgressBar
-            android:id="@+id/progress_bar"
-            style="@style/CircularDeterminateProgressBar"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:progress="0" />
-
-        <TextView
-            android:id="@+id/text_view_progress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            app:layout_constraintBottom_toBottomOf="@+id/progress_bar"
-            app:layout_constraintEnd_toEndOf="@+id/progress_bar"
-            app:layout_constraintStart_toStartOf="@+id/progress_bar"
-            app:layout_constraintTop_toTopOf="@+id/progress_bar"
-            tools:text="60%" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    </LinearLayout>
-    </androidx.cardview.widget.CardView>
-    <LinearLayout
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp"
-        android:orientation="horizontal"
-        android:gravity="bottom"
-        android:layout_alignParentBottom="true"
-        >
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/hp"/>
-    </LinearLayout>
+        android:layout_height="65dp"
+        android:layout_gravity="bottom"
+        app:menu="@menu/bottom_menu"
+        android:elevation="3dp"
+        android:background="@drawable/bg_search"
 
-    </LinearLayout>
+        />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

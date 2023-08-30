@@ -7,8 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.activity.OnBackPressedCallback
-import androidx.fragment.app.FragmentManager
+import com.nppr.myapplication.Components.RealTime
 
 class Info : Fragment(R.layout.fragment_info) {
     private var param1: String? = null
@@ -31,7 +30,7 @@ class Info : Fragment(R.layout.fragment_info) {
 
         backk.setOnClickListener {
 
-            val destinationFragment = RealFragment()
+            val destinationFragment = RealTime()
             parentFragmentManager.beginTransaction()
                 .replace(R.id.nav_host_fragment_content_home, destinationFragment).disallowAddToBackStack().commit()
                 //.addToBackStack(null) // If you want to add the fragment to the back stack

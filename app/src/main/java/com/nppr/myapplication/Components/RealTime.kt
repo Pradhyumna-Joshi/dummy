@@ -1,4 +1,4 @@
-package com.nppr.myapplication
+package com.nppr.myapplication.Components
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,10 +12,12 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-import java.util.*
+import com.nppr.myapplication.Info
+import com.nppr.myapplication.MapsActivity
+import com.nppr.myapplication.R
 import kotlin.math.roundToInt
 
-class RealFragment : Fragment(R.layout.fragment_real) {
+class RealTime : Fragment(R.layout.fragment_real) {
 
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private val permissionId = 2
@@ -161,7 +163,7 @@ class RealFragment : Fragment(R.layout.fragment_real) {
             cntry.visibility= View.GONE
             ct.visibility=View.GONE
             search.visibility=View.GONE
-            val intent= Intent(context,MapsActivity::class.java)
+            val intent= Intent(context, MapsActivity::class.java)
             startActivity(intent)
         }
         btnll.setOnClickListener {

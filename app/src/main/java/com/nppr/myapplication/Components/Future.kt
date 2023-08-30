@@ -1,4 +1,4 @@
-package com.nppr.myapplication
+package com.nppr.myapplication.Components
 
 import android.app.DatePickerDialog
 import android.os.Bundle
@@ -6,14 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
-import java.text.SimpleDateFormat
+import com.nppr.myapplication.R
 import java.util.*
 
-class futureFragment : Fragment(R.layout.fragment_future) {
+class Future : Fragment(R.layout.fragment_future) {
     override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
         super.onViewCreated(itemView, savedInstanceState)
 
